@@ -2,7 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  div#calculations_output
+    each val in [1,2,3]
+      p= val
+  div#calculations_input
+    form#calculations_input_form
+      input(type='text' id="user_input")
+      input(type='submit' id="user_submit" value="Calculate!")
   script(src="https://code.jquery.com/jquery-3.4.1.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js")
   script(src="/javascripts/calculatorClient.js")
