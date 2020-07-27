@@ -2,8 +2,9 @@ $(function () {
     var socket = io();
     $('form').submit(function (e) {
         e.preventDefault(); // prevents page reloading
-        var eqRegex = /(\d*\.?\d+)(([+\-/*]|\*\*)(\d*\.?\d+))+/;
+        var eqRegex = /(\d*\.?\d+)(([+\-/*%]|\*\*)(\d*\.?\d+))+/;
         var input = $('#user_input').val();
+        input = input.replace(/[\(\)\s]/g, "");
 
         console.log(input);
         console.log(input.search(eqRegex));

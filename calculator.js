@@ -1,6 +1,8 @@
 function calculate(string) {
-    var eqRegex = /(\d*\.?\d+)(([+\-/*]|\*\*)(\d*\.?\d+))+/;
-    if(string.search(eqRegex) < 0) {
+    var eqRegex = /(\d*\.?\d+)(([+\-/*%]|\*\*)(\d*\.?\d+))+/;
+    cleanString = string.replace(/[\(\)\s]/g, "");
+
+    if(cleanString.search(eqRegex) < 0) {
         return "INVALID";
     }
 
