@@ -7,7 +7,6 @@ var indexRouter = require('./routes/index');
 var app = express();
 var http = require('http').createServer(app); 
 var io = require('socket.io')(http);
-// var calculator = require('./calculator.js')
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -18,19 +17,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var computationCache = [];
 
-io.on('connection', (socket) => {
-  console.log(computationCache);
-  socket.on('calculation', (string) => {
-    console.log("Someday, I'll compute this: " + string);
-    io.emit('calculation', string);
-    var logEntry = { string: "answer" };
-    computationCache.push(logEntry);
-    if (computationCache.length > 10) {
-      computationCache.shift();
-    }
-  });   
-});
+var calculator = require('./calculator.js')(io, computationCache);
 
+// Add cached calculations to every page render response
+app.use('/', function(req, res, next) {
+  res.cache = computationCache;
+  next();
+});
 
 app.use('/', indexRouter);
 

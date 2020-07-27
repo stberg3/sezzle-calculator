@@ -2,9 +2,12 @@ extends layout
 
 block content
   h1= title
-  div#calculations_output
-    each val in [1,2,3]
-      p= val
+  div#calculations_output   
+    table#calculations_output_table     
+      each calc in cache
+        tr
+          td= calc.calc
+          td= calc.answer
   div#calculations_input
     form#calculations_input_form
       input(type='text' id="user_input")
