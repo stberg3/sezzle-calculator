@@ -12,6 +12,15 @@ a {
   padding: .5rem;
 }
 
+#user_input {
+  margin-right: 5px;
+}
+
 .btn {
   padding: 5px;
+}
+
+img {
+  height: 3em;
+  padding-right: 1em;
 }

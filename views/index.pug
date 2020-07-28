@@ -1,19 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  div.container-fluid#calculations
-    form#calculations_input_form
-      div.row.form-group
+  div.container-fluid
+    div.row#heading
+      img.float-left(img src="https://media.sezzle.com/branding/2.0/Sezzle_Logo_FullColor.svg")
+      h1  Calculator
+    div#calculations
+      form.row.form-group#calculations_input_form      
         input.col.form-control(type='text' id='user_input')
-        button.col-1.btn.btn-primary(type='submit') Calculate!
-
-    table.table#calculations_output_table
-      each calc in cache
-        tr.row
-          td.col= calc.calc
-          td.col-1 =
-          td.col-3= calc.answer
+        button.col-1-md.btn.btn-primary(type='submit') Calculate!
+      table.table#calculations_output_table
+        each calc in cache
+          tr.row
+            td.col= calc.calc
+            td.col-1 =
+            td.col-3= calc.answer
   script(src='https://code.jquery.com/jquery-3.4.1.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js')
   script(src='/javascripts/calculatorClient.js')
