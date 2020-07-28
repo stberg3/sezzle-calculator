@@ -1,7 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var socketServer = require('socket.io');
 
 var indexRouter = require('./routes/index');
 var app = express();
@@ -16,7 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 var computationCache = [];
-
 var calculator = require('./calculator.js')(io, computationCache);
 
 // Add cached calculations to every page render response
@@ -43,11 +41,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
-
-
 http.listen(3000, () => {
   console.log('listening on *:3000');
 });
-
-
