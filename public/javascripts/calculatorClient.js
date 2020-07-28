@@ -17,8 +17,8 @@ $(function () {
     });
 
     socket.on('calculation_output', function (calc) {
-        if ($('table:first > tr').length > 9) {
-            $('table:first > tr:first').remove();
+        if ($('tbody:first > tr').length > 9) {
+            $('tbody:first > tr:first').remove();
         }
         
         $('#calculations_output_table')

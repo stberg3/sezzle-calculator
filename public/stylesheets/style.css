@@ -8,6 +8,13 @@ a {
   color: #00B7FF;
 }
 
+#header {
+  color: #3b2a59;
+  font-family: "Comfortaa";
+  font-weight: 700;
+  margin-top: 5px;
+}
+
 .table tr > td {
   padding: .5rem;
 }
