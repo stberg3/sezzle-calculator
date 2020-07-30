@@ -41,6 +41,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
+http.listen(process.env.PORT || 5000, () => {
+  console.log('listening on *:' + process.env.PORT || 5000);
 });
