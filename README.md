@@ -1,5 +1,20 @@
-## Calculator Exercise details:
-Create a web app (using any programming languages) which logs calculations as they happen and shares those calculations with everyone connected to the website.
+# Sam Berg's Calculator Web App
+Hey Sezzle, thanks for the interest. I built my calculator using NodeJS, ExpressJS, and SocketIO.
+
+## Building the App
+Run this command in the root of the project: `npm install`
+
+## Running the App
+After building the app, run this command in the root of the project: `npm start`
+
+## Viewing the App
+After building *and* starting the app, start a browser and navigate to this URL: `http://localhost:3000`
+
+Now you can calculate on as many tabs as you want!
+
+## Calculator Exercise Details:
+Create a web app (using any programming languages) which logs calculations as they happen and shares those 
+calculations with everyone connected to the website.
  
 For example, user A and user B go to your site at the same time. User A calculates "5 + 5", which equals "10".
 This is logged below the calculator as "5 + 5 = 10". User B is updated about this calculation right after 
