@@ -10,7 +10,7 @@ block content
         input.col.form-control(type='text' id='user_input')
         button.col-1-md.btn.btn-primary(type='submit') Calculate!
       table.table#calculations_output_table
-        each calc in cache
+        each calc in cache.reverse()
           tr.row
             td.col= calc.calc
             td.col-1 =

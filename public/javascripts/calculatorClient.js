@@ -22,7 +22,7 @@ $(function () {
         }
         
         $('#calculations_output_table')
-            .append($('<tr class="row">')
+            .prepend($('<tr class="row">')
                 .append($('<td class="col">').text(calc.calc))
                 .append($('<td class="col-1">').text('='))
                 .append($('<td class="col-3">').text(calc.answer)));
